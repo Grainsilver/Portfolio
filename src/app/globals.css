@@ -1,26 +1,153 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =========================
+   DESIGN SYSTEM (GLOBAL)
+========================= */
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg: #050506;
+  --text: #e9e9ef;
+  --muted: #a1a1aa;
+
+  /* MATURE ACCENT SYSTEM */
+  --primary: #7c5cff;
+  --primary-hover: #a78bfa;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* =========================
+   GLOBAL RESET
+========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html,
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+
+/* =========================
+   TYPOGRAPHY
+========================= */
+
+h1, h2, h3, h4, h5 {
+  color: var(--text);
+  letter-spacing: -0.02em;
+}
+
+p {
+  color: var(--muted);
+}
+
+/* =========================
+   LINKS
+========================= */
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+
+a:hover {
+  color: var(--primary);
+}
+
+/* =========================
+   BUTTONS (PRIMARY CTA)
+========================= */
+
+.btn {
+  background-color: var(--primary);
+  color: rgb(84, 15, 15);
+  padding: 12px 18px;
+  border-radius: 10px;
+  font-weight: 600;
+  display: inline-block;
+  transition: 0.2s ease;
+}
+
+.btn:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-1px);
+}
+
+/* =========================
+   CARDS (PROJECTS / SERVICES)
+========================= */
+
+.card {
+  background: rgba(32, 89, 77, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 20px;
+  transition: 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(124, 92, 255, 0.4);
+}
+
+/* =========================
+   UTILITIES
+========================= */
+
+.text-muted {
+  color: var(--muted);
+}
+
+.text-primary {
+  color: var(--primary);
+}
+
+/* =========================
+   LAYOUT CONTAINER SYSTEM
+========================= */
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* =========================
+   SECTION SPACING SYSTEM
+========================= */
+
+section {
+  padding: 80px 0;
+}
+
+/* =========================
+   FLEX/GAP SAFETY (prevents sticking elements)
+========================= */
+
+.flex {
+  gap: 16px;
+}
+
+/* =========================
+   RESPONSIVE SAFETY (zoom-friendly)
+========================= */
+
+html {
+  font-size: 16px;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  min-width: 320px;
+  overflow-x: hidden;
+}
+html {
+  scroll-behavior: smooth;
 }
